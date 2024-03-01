@@ -6,11 +6,15 @@
       class="rounded-full size-20 ml-4 border-4 border-slate-100"
     />
     <div class="flex flex-col mx-6">
-      <span class="text-slate-100 font-bold text-lg uppercase">Nom</span>
-      <span class="text-slate-300 font-light text-sm italic">Race</span>
+      <span class="text-slate-100 font-bold text-lg uppercase">{{
+        player.pseudo
+      }}</span>
+      <span class="text-slate-300 font-light text-sm italic">{{
+        player.race
+      }}</span>
     </div>
     <div class="flex gap-x-2 items-center">
-      <span class="text-yellow-400 text-2xl">121231</span>
+      <span class="text-yellow-400 text-2xl">{{ player.gold }}</span>
       <img
         src="https://www.svgrepo.com/show/205790/coin.svg"
         alt=""
@@ -20,6 +24,8 @@
   </div>
   <div class="flex items-center mr-4 gap-x-4">
     <span class="text-4xl text-slate-100 opacity-75">niveau</span>
-    <span class="text-7xl font-bold text-slate-100 opacity-35">1699</span>
+    <span class="text-7xl font-bold text-slate-100 opacity-35">{{
+      player.lvl
+    }}</span>
   </div>
 </header>
