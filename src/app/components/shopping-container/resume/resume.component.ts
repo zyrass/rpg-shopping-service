@@ -9,8 +9,9 @@ import { Component, Injectable } from '@angular/core';
 })
 export class ResumeComponent {
   public desactivatedBTN?: boolean = this.playerService.getGold()! <= 99;
-
   public inventory = { ...this.playerService.getInventory()?.potions };
+
+  public price = this.vendeurService.getPrice();
 
   public message = {
     bienvenue: this.vendeurService.getMessageBienvenue(),

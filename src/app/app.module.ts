@@ -8,6 +8,7 @@ import { TitleComponent } from './components/title/title.component';
 import { ShoppingContainerComponent } from './components/shopping-container/shopping-container.component';
 import { ShoppingComponent } from './components/shopping-container/shopping/shopping.component';
 import { ResumeComponent } from './components/shopping-container/resume/resume.component';
+import { HoverBoutiqueDirective } from './directives/hover-boutique.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ResumeComponent } from './components/shopping-container/resume/resume.c
     TitleComponent,
     ShoppingContainerComponent,
     ShoppingComponent,
-    ResumeComponent
+    ResumeComponent,
+    HoverBoutiqueDirective
   ],
   imports: [
     BrowserModule,

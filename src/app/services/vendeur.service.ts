@@ -19,6 +19,8 @@ export class VendeurService {
     aurevoir: 'Merci beaucoup, pour votre visite',
   };
 
+  private price?: number = 0;
+
   constructor() {}
 
   public getMessageBienvenue() {
@@ -51,5 +53,13 @@ export class VendeurService {
 
   public getMessageAurevoir() {
     return this.message.aurevoir;
+  }
+
+  public getPrice() {
+    return this.price;
+  }
+
+  public setPrice(price: number) {
+    this.price = price;
   }
 }

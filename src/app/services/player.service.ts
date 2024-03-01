@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class PlayerService {
   private name?: string = 'Zyrass on Dyma';
   private race?: string = 'Développeur fou';
-  private gold?: number = 99 || 0;
+  private gold?: number = 999999 || 0;
   private lvl?: number = 69;
   private inventory? = {
     potions: {
