@@ -6,8 +6,24 @@ import { Injectable } from '@angular/core';
 export class PlayerService {
   private name?: string = 'Zyrass on Dyma';
   private race?: string = 'Développeur fou';
-  private gold?: number = 123456 || 0;
+  private gold?: number = 99 || 0;
   private lvl?: number = 69;
+  private inventory? = {
+    potions: {
+      quantity: {
+        sante: {
+          petite: 0,
+          grande: 0,
+          elixir: 0,
+        },
+        mana: {
+          petite: 0,
+          grande: 0,
+          elixir: 0,
+        },
+      },
+    },
+  };
 
   constructor() {
     this.name = this.getName();
@@ -43,5 +59,50 @@ export class PlayerService {
 
   public setLvl(lvl: number) {
     this.lvl = lvl;
+  }
+
+  public getInventory() {
+    return this.inventory;
+  }
+
+  public addPetitePotionSante() {
+    console.log(
+      'petite potion de santé',
+      this.inventory!.potions.quantity.sante.petite
+    );
+    this.inventory!.potions.quantity.sante.petite++;
+  }
+  public addGrandePotionSante() {
+    console.log(
+      'grande potion de santé',
+      this.inventory!.potions.quantity.sante.grande
+    );
+    this.inventory!.potions.quantity.sante.grande++;
+  }
+  public addElixirSante() {
+    console.log(
+      'elixir de santé',
+      this.inventory!.potions.quantity.sante.elixir
+    );
+    this.inventory!.potions.quantity.sante.elixir++;
+  }
+
+  public addPetitePotionMana() {
+    console.log(
+      'petite potion de mnna',
+      this.inventory!.potions.quantity.mana.petite
+    );
+    this.inventory!.potions.quantity.mana.petite++;
+  }
+  public addGrandePotionMana() {
+    console.log(
+      'grande potion de mana',
+      this.inventory!.potions.quantity.mana.grande
+    );
+    this.inventory!.potions.quantity.mana.grande++;
+  }
+  public addElixirMana() {
+    console.log('elixir de mana', this.inventory!.potions.quantity.mana.elixir);
+    this.inventory!.potions.quantity.mana.elixir++;
   }
 }

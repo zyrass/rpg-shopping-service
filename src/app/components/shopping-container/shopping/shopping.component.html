@@ -21,11 +21,14 @@
       <td class="text-center border py-2 px-4">
         <button
           class="py-1 px-2 shadow-sm bg-zinc-600 text-slate-100 font-black text-center rounded-lg w-full"
+          (click)="ajouterPotion('sante', 'petite')"
         >
           + 1
         </button>
       </td>
-      <td class="text-center border py-2 px-4">0</td>
+      <td class="text-center border py-2 px-4">
+        {{ inventory?.quantity?.sante?.petite }}
+      </td>
     </tr>
     <tr>
       <td class="text-left border py-2 px-4">Grande Potion de vie</td>
@@ -40,11 +43,14 @@
       <td class="text-center border py-2 px-4">
         <button
           class="py-1 px-2 shadow-sm bg-zinc-600 text-slate-100 font-black text-center rounded-lg w-full"
+          (click)="ajouterPotion('sante', 'grande')"
         >
           + 1
         </button>
       </td>
-      <td class="text-center border py-2 px-4">0</td>
+      <td class="text-center border py-2 px-4">
+        {{ inventory?.quantity?.sante?.grande }}
+      </td>
     </tr>
     <tr class="border">
       <td class="text-left border py-2 px-4">Elixir de vie</td>
@@ -59,11 +65,14 @@
       <td class="text-center border py-2 px-4">
         <button
           class="py-1 px-2 shadow-sm bg-zinc-600 text-slate-100 font-black text-center rounded-lg w-full"
+          (click)="ajouterPotion('sante', 'elixir')"
         >
           + 1
         </button>
       </td>
-      <td class="text-center border py-2 px-4">0</td>
+      <td class="text-center border py-2 px-4">
+        {{ inventory?.quantity?.sante?.elixir }}
+      </td>
     </tr>
     <tr>
       <td class="text-left border py-2 px-4">Petite Potion de mana</td>
@@ -78,11 +87,14 @@
       <td class="text-center border py-2 px-4">
         <button
           class="py-1 px-2 shadow-sm bg-zinc-600 text-slate-100 font-black text-center rounded-lg w-full"
+          (click)="ajouterPotion('mana', 'petite')"
         >
           + 1
         </button>
       </td>
-      <td class="text-center border py-2 px-4">0</td>
+      <td class="text-center border py-2 px-4">
+        {{ inventory?.quantity?.mana?.petite }}
+      </td>
     </tr>
     <tr>
       <td class="text-left border py-2 px-4">Grande Potion de vie</td>
@@ -97,11 +109,14 @@
       <td class="text-center border py-2 px-4">
         <button
           class="py-1 px-2 shadow-sm bg-zinc-600 text-slate-100 font-black text-center rounded-lg w-full"
+          (click)="ajouterPotion('mana', 'grande')"
         >
           + 1
         </button>
       </td>
-      <td class="text-center border py-2 px-4">0</td>
+      <td class="text-center border py-2 px-4">
+        {{ inventory?.quantity?.mana?.grande }}
+      </td>
     </tr>
     <tr>
       <td class="text-left border py-2 px-4">Elixir de mana</td>
@@ -116,17 +131,29 @@
       <td class="text-center border py-2 px-4">
         <button
           class="py-1 px-2 shadow-sm bg-zinc-600 text-slate-100 font-black text-center rounded-lg w-full"
+          (click)="ajouterPotion('mana', 'elixir')"
         >
           + 1
         </button>
       </td>
-      <td class="text-center border py-2 px-4">0</td>
+      <td class="text-center border py-2 px-4">
+        {{ inventory?.quantity?.mana?.elixir }}
+      </td>
     </tr>
   </tbody>
   <tfoot>
     <tr>
       <th colspan="3" class="text-right pr-4 border">Total à payer</th>
-      <td class="text-center font-black py-2 px-4 border">0 gold</td>
+      <td
+        class="text-center font-black py-2 px-4 border flex justify-around items-center"
+      >
+        {{ counter }}
+        <img
+          src="https://www.svgrepo.com/show/205790/coin.svg"
+          alt=""
+          class="size-8"
+        />
+      </td>
     </tr>
   </tfoot>
   <caption

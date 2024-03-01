@@ -1,6 +1,6 @@
 <p class="bg-slate-300 rounded-lg py-2 px-4 text-slate-900 italic">
   <span class="font-bold">Vendeuse : </span>
-  Bonjour, vous avez-vous besoin d'un article en particulier ?
+  {{ message.sante.grande }}
 </p>
 
 <!-- choix de l'utilisateur -->
@@ -11,45 +11,45 @@
       class="flex justify-between py-2 px-4 border border-slate-900 bg-slate-100 rounded-md mb-2"
     >
       <span>Petite potion de vie</span>
-      <span>x Quantité</span>
+      <span>x {{ inventory.quantity?.sante?.petite }}</span>
     </li>
     <li
       class="flex justify-between py-2 px-4 border border-slate-900 bg-slate-100 rounded-md mb-2"
     >
-      <span>Petite potion de vie</span>
-      <span>x Quantité</span>
+      <span>Grande potion de vie</span>
+      <span>x {{ inventory.quantity?.sante?.grande }}</span>
     </li>
     <li
       class="flex justify-between py-2 px-4 border border-slate-900 bg-slate-100 rounded-md mb-2"
     >
-      <span>Petite potion de vie</span>
-      <span>x Quantité</span>
+      <span>Elixir de vie</span>
+      <span>x {{ inventory.quantity?.sante?.elixir }}</span>
     </li>
     <li
       class="flex justify-between py-2 px-4 border border-slate-900 bg-slate-100 rounded-md mb-2"
     >
-      <span>Petite potion de vie</span>
-      <span>x Quantité</span>
+      <span>Petite potion de magie</span>
+      <span>x {{ inventory.quantity?.mana?.petite }}</span>
     </li>
     <li
       class="flex justify-between py-2 px-4 border border-slate-900 bg-slate-100 rounded-md mb-2"
     >
-      <span>Petite potion de vie</span>
-      <span>x Quantité</span>
+      <span>Grande potion de magie</span>
+      <span>x {{ inventory.quantity?.mana?.grande }}</span>
     </li>
     <li
       class="flex justify-between py-2 px-4 border border-slate-900 bg-slate-100 rounded-md mb-2"
     >
-      <span>Petite potion de vie</span>
-      <span>x Quantité</span>
+      <span>Elixir de magie</span>
+      <span>x {{ inventory.quantity?.mana?.elixir }}</span>
     </li>
   </ul>
 
   <button
-    class="mt-4 py-2 px-4 bg-red-400 w-full flex items-center font-bold border-2 border-red-900 justify-around rounded-lg shadow-lg mb-4"
+    class="mt-4 py-2 px-4 bg-red-400 w-full flex items-center font-bold border-2 border-red-900 justify-around rounded-lg shadow-lg mb-4 disabled:cursor-not-allowed disabled:bg-gray-400"
+    [disabled]="desactivatedBTN"
   >
     Payer la somme de xxxxxx
-
     <img
       src="https://www.svgrepo.com/show/205790/coin.svg"
       alt=""
